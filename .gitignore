@@ -2,4 +2,4 @@
 .terrafrom/
 *.tfstate
 *.docx
-
+*.gitignore*
