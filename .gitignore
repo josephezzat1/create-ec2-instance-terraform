@@ -1,5 +1,5 @@
 .terraform*
 .terrafrom/
-*.tfstate
+*.tfstate*
 *.docx
 *.gitignore*
