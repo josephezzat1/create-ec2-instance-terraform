@@ -5,7 +5,12 @@ resource "aws_instance" "my-ec2"{
         Name = "Joseph-EC2-Instance"
     }
 }
-resource "aws_eip" "my-eip" {
-    instance_id=aws.instance.my-ec2.id
+resource  "aws_eip" "my-eip"{
+    vpc = true
+}
+
+resource "aws_eip_association" "associate"{
+    instance_id=aws_instance.my-ec2.id
     allocation_id=aws_eip.my-eip.id
+
 }
