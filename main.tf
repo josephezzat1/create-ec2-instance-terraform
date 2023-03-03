@@ -14,3 +14,24 @@ resource "aws_eip_association" "associate"{
     allocation_id=aws_eip.my-eip.id
 
 }
+output "Private_IP" {
+    description = "VMs Private IP"
+    value= aws_instance.my-ec2.public_ip
+
+}
+output "VMs_Type"{
+    description = "VMs type"
+    value = aws_instance.my-ec2.instance_type
+}
+
+output "Public_IP"{
+    description = "VMs private IP"
+    value = aws_instance.my-ec2.private_ip
+}
+terraform {
+    backend "s3" {
+    bucket = "joseph-bucket2"
+    key    = "key"
+    region = "us-west-2"
+  }
+}
